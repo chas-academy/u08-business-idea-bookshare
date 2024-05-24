@@ -1,0 +1,104 @@
+/* @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css"); */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;500&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+div,
+section,
+span,
+button {
+  font-family: "Raleway", sans-serif;
+}
+
+code {
+  font-family: "Raleway", sans-serif;
+}
+
+.lightbrownbg {
+  background-color: #f8f4f2;
+}
+
+.purple {
+  background-color: #ccbfca;
+}
+
+.dashboard-p {
+  font-size: 1.7rem;
+}
+
+/* .bookTitle {
+  font-weight: bold;
+} */
+
+.custom-btn {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  background-color: transparent;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.custom-btn-border {
+  border-color: #81647c;
+  color: #81647c;
+}
+
+.custom-btn:hover {
+  background: #81647c;
+  color: white;
+}
+
+.bg-books {
+  background-image: url("https://images.unsplash.com/photo-1562932831-afcfe48b5786?q=80&w=1830&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+.darkbrown-nav {
+  background: rgb(136, 90, 62);
+  background: radial-gradient(
+    circle,
+   rgb(135, 88, 59) 0%,
+    rgb(179, 130, 99) 100%
+  );
+}
+
+@media screen and (min-width: 700px) {
+  main {
+    min-height: 76vh;
+  }
+  .mainPage {
+    margin: 2em auto;
+    padding: 1.5rem;
+    width: 95%;
+  }
+}
+
+@media screen and (min-width: 1174px) {
+  .mainPage {
+    width: 66%;
+    margin: 5em auto;
+  }
+}
+
+@media screen and (max-width: 699px) {
+  .mainPage {
+    margin: 2em auto 3em auto;
+  }
+}
