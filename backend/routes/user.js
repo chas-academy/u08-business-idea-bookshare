@@ -95,7 +95,9 @@ router.get('/protected', authorization, async (req, res) => {
 //@routes POST /user/register
 //@access Public
 router.post('/register', async (req, res) => {
+	console.log("test", req);
 	const user = new User(req.body);
+	
 
 	const salt = await bcrypt.genSalt(10);
 	user.password = await bcrypt.hash(user.password, salt);
