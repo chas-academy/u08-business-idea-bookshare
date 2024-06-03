@@ -14,9 +14,12 @@ const app = express();
 app.use(cookieParser());
 app.use(express.json());
 
+
 app.use(
-  
-  cors()
+  cors({
+    origin: process.env.REQUEST_URL,
+    credentials: true,
+  })
 );
 
 app.use("/user", userRouter);

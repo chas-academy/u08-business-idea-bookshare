@@ -14,7 +14,7 @@ export const Home = () => {
 						/>
 					</div>
 					<p className="text-center fs-4 m-2 p-2">
-						BookOwl is a platform where you can loan books from
+						BookShare is a platform where you can loan books from
 						other people as well as loan out your books to other
 						people.
 					</p>

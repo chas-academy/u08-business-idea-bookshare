@@ -7,7 +7,6 @@ export const Registration = () => {
 	const [formData, setFormData] = useState({
 		firstName: '',
 		lastName: '',
-		city: '',
 		email: '',
 		password: '',
 		confirmPassword: '',
@@ -15,7 +14,7 @@ export const Registration = () => {
 	const [formErrors, setFormErrors] = useState({});
 	const [error, setError] = useState(true);
 	const [submitted, setSubmitted] = useState(false);
-	const { firstName, lastName, city, email, password, confirmPassword } =
+	const { firstName, lastName, email, password, confirmPassword } =
 		formData;
 
 	const onChange = (e) => {
@@ -84,8 +83,9 @@ export const Registration = () => {
 	};
 
 	const register = async (userData) => {
+		console.log("test", userData)
 		await axios
-			.post(process.env.REACT_APP_API_URL + 'user/register', userData)
+			.post(process.env.REACT_APP_API_URL + '/user/register', userData)
 			.then((res) => {
 				console.log('Successfully registered');
 			});
@@ -173,8 +173,8 @@ export const Registration = () => {
 							id="confirmPassword"
 							name="confirmPassword"
 							value={confirmPassword}
-							onChange={onChange}
-						/>
+							onChange={onChange}/>
+						
 					</div>
 
 					<div className="col-12 pt-4 text-center">
@@ -185,10 +185,7 @@ export const Registration = () => {
 								backgroundColor: '#81647C',
 								borderColor: '#81647C',
 							}}
-							onClick={onSubmit}
-						>
-							Register User
-						</button>
+							onClick={onSubmit}>Register User</button>
 					</div>
 				</form>
 			</section>
