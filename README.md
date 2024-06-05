@@ -121,7 +121,10 @@ The frontend is built with React. Set up the frontend by navigating to the front
 
 
 
-![Screenshot of Figma lo-fi sketch for mobile](U08-Business-Idea.png)
+
+![Screenshot of Figma lo-fi sketch for mobile](frontend/public/U08-Business-idea.png)
+
+
 
 
 
