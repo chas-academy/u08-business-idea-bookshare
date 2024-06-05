@@ -115,13 +115,16 @@ The frontend is built with React. Set up the frontend by navigating to the front
 - Add a queue function for users to wait for book availability.
 - Implement rating and commenting for books and users.
 
-### Figma lo-fi sketch
+### Figma lo-fi sketch for mobile
 
 
 
 
 
 ![Screenshot of Figma lo-fi sketch for mobile](U08-Business-Idea.png)
+
+
+
 
 
 
