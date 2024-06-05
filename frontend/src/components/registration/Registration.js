@@ -7,6 +7,7 @@ export const Registration = () => {
 	const [formData, setFormData] = useState({
 		firstName: '',
 		lastName: '',
+		city: '',
 		email: '',
 		password: '',
 		confirmPassword: '',
@@ -14,7 +15,7 @@ export const Registration = () => {
 	const [formErrors, setFormErrors] = useState({});
 	const [error, setError] = useState(true);
 	const [submitted, setSubmitted] = useState(false);
-	const { firstName, lastName, email, password, confirmPassword } =
+	const { firstName, lastName, city, email, password, confirmPassword } =
 		formData;
 
 	const onChange = (e) => {
@@ -48,7 +49,10 @@ export const Registration = () => {
 			errors.lastName = 'Last name is required!';
 			setError(true);
 		}
-		
+		if (!values.city) {
+			errors.city = 'City is required!';
+			setError(true);
+		}
 		if (!values.email) {
 			errors.email = 'Email is required!';
 			setError(true);
@@ -83,7 +87,6 @@ export const Registration = () => {
 	};
 
 	const register = async (userData) => {
-		console.log("test", userData)
 		await axios
 			.post(process.env.REACT_APP_API_URL + '/user/register', userData)
 			.then((res) => {
@@ -132,7 +135,23 @@ export const Registration = () => {
 							onChange={onChange}
 						/>
 					</div>
-               <div className="col-12">
+
+					<div className="col-12">
+						<label htmlFor="city" className="form-label">
+							City of residence
+						</label>
+						<p>{formErrors.city}</p>
+						<input
+							type="text"
+							className="form-control"
+							id="city"
+							name="city"
+							value={city}
+							onChange={onChange}
+						/>
+					</div>
+
+					<div className="col-12">
 						<label htmlFor="email" className="form-label">
 							Email
 						</label>
@@ -173,8 +192,8 @@ export const Registration = () => {
 							id="confirmPassword"
 							name="confirmPassword"
 							value={confirmPassword}
-							onChange={onChange}/>
-						
+							onChange={onChange}
+						/>
 					</div>
 
 					<div className="col-12 pt-4 text-center">
@@ -185,7 +204,10 @@ export const Registration = () => {
 								backgroundColor: '#81647C',
 								borderColor: '#81647C',
 							}}
-							onClick={onSubmit}>Register User</button>
+							onClick={onSubmit}
+						>
+							Register User
+						</button>
 					</div>
 				</form>
 			</section>

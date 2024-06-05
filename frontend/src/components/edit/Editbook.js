@@ -8,7 +8,7 @@ const Editbook = () => {
 		author: '',
 		description: '',
 		genre: '',
-		condition: '',
+		language: '',
 		release: '',
 	});
 	const [bookInfo, setBookInfo] = useState([]);
@@ -21,14 +21,14 @@ const Editbook = () => {
 		}));
 	};
 
-	const { title, author, description, genre, condition, release } = userInput;
+	const { title, author, description, genre, language, release } = userInput;
 
 	useEffect(() => {
 		const id = params.id;
 
 		const getBook = async (id) => {
 			await axios
-				.get(process.env.REACT_APP_API_URL + `book/${id}`)
+				.get(process.env.REACT_APP_API_URL + `/book/${id}`)
 				.then((res) => {
 					setBookInfo(res.data);
 					setUserInput({
@@ -36,7 +36,7 @@ const Editbook = () => {
 						author: bookInfo.author,
 						description: bookInfo.description,
 						genre: bookInfo.genre,
-						condition: bookInfo.condition,
+						language: bookInfo.language,
 						release: bookInfo.release,
 					});
 				});
@@ -44,7 +44,7 @@ const Editbook = () => {
 		getBook(id);
 	}, [
 		bookInfo.author,
-		bookInfo.condition,
+		bookInfo.language,
 		bookInfo.description,
 		bookInfo.genre,
 		bookInfo.release,
@@ -60,7 +60,7 @@ const Editbook = () => {
 			author,
 			description,
 			genre,
-			condition,
+			language,
 			release,
 		};
 		updateBook(bookData);
@@ -69,7 +69,7 @@ const Editbook = () => {
 	const updateBook = async (bookData) => {
 		const id = params.id;
 		await axios
-			.put(process.env.REACT_APP_API_URL + `book/${id}`, bookData)
+			.put(process.env.REACT_APP_API_URL + `/book/${id}`, bookData)
 			.then((res) => {
 				console.log('Book updated successfully');
 			});
@@ -141,15 +141,15 @@ const Editbook = () => {
 						<option>Young adult</option>
 					</select>
 
-					<label className="mt-3 mb-1" htmlFor="condition">
-						Condition
+					<label className="mt-3 mb-1" htmlFor="language">
+					Language
 					</label>
 					<input
 						className="form-control w-50"
 						type="text"
-						name="condition"
+						name="language"
 						onChange={onChange}
-						value={condition}
+						value={language}
 					/>
 
 					<label className="mt-3 mb-1" htmlFor="release">

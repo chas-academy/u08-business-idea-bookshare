@@ -12,7 +12,10 @@ const UserSchema = new mongoose.Schema(
       required: true,
       max: 50,
     },
-   
+    city: {
+      type: String,
+      required: true,
+    },
     email: {
       type: String,
       required: true,

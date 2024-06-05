@@ -10,7 +10,7 @@ import { Dashboard } from './components/dashboard/Dashboard';
 import { Bookpage } from './components/bookpage/Bookpage';
 import { Addbook } from './components/addbook/Addbook';
 import { Edit } from './components/edit/Edit';
-import { Messenger } from './components/messenger/Messenger';
+
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Home } from './components/Home/Home';
 import Footer from './components/footer/Footer';
@@ -22,7 +22,7 @@ function App() {
 	const onLogout = async () => {
 		//Send token info in headers to backend to let user logout. Backend will remove HTTPOnly cookies
 		await axios
-			.get(process.env.REACT_APP_API_URL + 'user/logout', {
+			.get(process.env.REACT_APP_API_URL + '/user/logout', {
 				withCredentials: true,
 				headers: {
 					Authorization: `Bearer ${user}`,
@@ -107,7 +107,7 @@ function App() {
 					<Route path="/addbook" element={<Addbook />} />
 					<Route path="/edit" element={<Edit />} />
 					<Route path="/editbook/:id" element={<Editbook />} />
-					<Route path="/messenger" element={<Messenger />} />
+					
 				</Routes>
 			</div>
 			<Footer />

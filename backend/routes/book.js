@@ -26,7 +26,7 @@ router.post('/newBook', uploadImg.single('file'), (req, res) => {
 			author: req.body.author,
 			description: req.body.description,
 			genre: req.body.genre,
-			condition: req.body.condition,
+			language: req.body.language,
 			released: req.body.released,
 			owner: req.body.owner,
 			image: req.file.originalname,

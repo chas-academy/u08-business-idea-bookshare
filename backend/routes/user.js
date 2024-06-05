@@ -24,9 +24,7 @@ const authorization = (req, res, next) => {
 	}
 };
 
-//@desc Login A User
-//@routes POST /user/login
-//@access Public
+
 router.post('/login', async (req, res) => {
 	const email = req.body.email;
 	const password = req.body.password;
@@ -49,11 +47,11 @@ router.post('/login', async (req, res) => {
 					httpOnly: true,
 					secure: true,
 					sameSite: 'none',
-					// secure: process.env.NODE_ENV === 'production',
+					
 				})
 				.status(200)
 				.json({
-					message: 'Logged in successfully 😊 👌',
+					message: 'Logged in successfully',
 					token: token,
 				});
 		} else if (!passwordMatch) {
@@ -64,9 +62,7 @@ router.post('/login', async (req, res) => {
 	}
 });
 
-//@desc Authorized a user
-//@routes GET /user/protected
-//@access Public
+
 router.get('/protected', authorization, async (req, res) => {
 	try {
 		const user = await User.findById(req.userId);
@@ -91,25 +87,19 @@ router.get('/protected', authorization, async (req, res) => {
 	}
 });
 
-//@desc Register A User
-//@routes POST /user/register
-//@access Public
+
 router.post('/register', async (req, res) => {
-	console.log("test", req);
 	const user = new User(req.body);
-	
 
 	const salt = await bcrypt.genSalt(10);
 	user.password = await bcrypt.hash(user.password, salt);
 
 	user.save().then(() => {
-		res.status(200).json({ message: 'New user has been created! 👏' });
+		res.status(200).json({ message: 'New user has been created!' });
 	});
 });
 
-//@desc Logout A User
-//@routes Get /user/logout
-//@access Public
+
 router.get('/logout', authorization, (req, res) => {
 	return res
 		.clearCookie('access_token')
@@ -117,9 +107,7 @@ router.get('/logout', authorization, (req, res) => {
 		.json({ message: 'Successfully logged out' });
 });
 
-//@desc Delete A User
-//@routes Delete /user/:id
-//@access Public
+
 router.delete('/:id', async (req, res) => {
 	const { id } = req.params;
 	if (!mongoose.Types.ObjectId.isValid(id))
@@ -130,9 +118,7 @@ router.delete('/:id', async (req, res) => {
 	return res.json({ message: 'User has been deleted successfully' });
 });
 
-//@desc Edit A User Information
-//@routes PUT /user/:id/edit
-//@access Public
+
 router.put('/:id/edit', async (req, res) => {
 	try {
 		const id = req.params.id;
@@ -145,9 +131,7 @@ router.put('/:id/edit', async (req, res) => {
 	}
 });
 
-//@desc reset user password
-//@routes PUT /user/:id/resetpassword
-//@access Public
+
 router.put('/:id/resetpassword', async (req, res) => {
 	try {
 		const id = req.params.id;
@@ -164,9 +148,7 @@ router.put('/:id/resetpassword', async (req, res) => {
 	}
 });
 
-//@desc Get a users name to display on Bookpage
-//@routes GET /user/:id
-//@access Public
+
 router.get('/:id', async (req, res) => {
 	const id = req.params.id;
 	try {
@@ -178,9 +160,7 @@ router.get('/:id', async (req, res) => {
 	}
 });
 
-//@desc Get user info
-//@routes GET /user
-//@access Public
+
 router.get('/', async (req, res) => {
 	const userId = req.query.userId;
 	try {

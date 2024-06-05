@@ -5,15 +5,12 @@ const dotenv = require("dotenv").config();
 const PORT = process.env.PORT || 8081;
 const userRouter = require("./routes/user");
 const bookRouter = require("./routes/book");
-const conversationRouter = require("./routes/conversations");
-const messageRouter = require("./routes/messages");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
 const app = express();
 app.use(cookieParser());
 app.use(express.json());
-
 
 app.use(
   cors({
@@ -25,17 +22,16 @@ app.use(
 app.use("/user", userRouter);
 app.use("/book", bookRouter);
 app.use("/uploads", express.static("./uploads"));
-app.use("/conversations", conversationRouter);
-app.use("/messages", messageRouter);
+
 
 app.get("/", (req, res) => {
-  return res.json({ message: "Hello from Nejat" });
+  return res.json({ message: "Welcome to my bookShare app" });
 });
 
 const startServer = (port) => {
   try {
     app.listen(port, () => {
-      console.log(`Server up and running on port${port}`);
+      console.log(`Server up and running ${port}`);
     });
   } catch (error) {
     console.error(error);
@@ -47,4 +43,3 @@ const startServer = (port) => {
 mongoose.connect(process.env.DATABASE_URL).then(() => {
   startServer(PORT);
 });
-

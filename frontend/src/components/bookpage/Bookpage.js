@@ -16,7 +16,7 @@ export const Bookpage = () => {
 	const getBook = async () => {
 		try {
 			const res = await axios
-				.get(process.env.REACT_APP_API_URL + 'book/' + params.id)
+				.get(process.env.REACT_APP_API_URL + '/book/' + params.id)
 				.then((res) => {
 					setBook(res.data.book);
 					setGetCity(res.data.city);
@@ -30,7 +30,7 @@ export const Bookpage = () => {
 	const getOwner = async (id) => {
 		try {
 			const res = await axios.get(
-				process.env.REACT_APP_API_URL + `user/${id}`
+				process.env.REACT_APP_API_URL + `/user/${id}`
 			);
 			// Return the owners first name
 			setOwner(res.data);
@@ -43,7 +43,7 @@ export const Bookpage = () => {
 	const checkUser = async () => {
 		//User sends its access_token in headers to BE to be decoded.
 		await axios
-			.get(process.env.REACT_APP_API_URL + 'user/protected', {
+			.get(process.env.REACT_APP_API_URL + '/user/protected', {
 				withCredentials: true,
 				headers: {
 					Authorization: `Bearer ${user}`,
@@ -62,7 +62,7 @@ export const Bookpage = () => {
 		const id = params.id;
 		const newBorrower = JSON.stringify({ borrower: Bid });
 		await axios
-			.put(process.env.REACT_APP_API_URL + `book/${id}`, newBorrower, {
+			.put(process.env.REACT_APP_API_URL + `/book/${id}`, newBorrower, {
 				headers: { 'Content-Type': 'application/json' },
 			})
 			.then((res) => {});
@@ -98,7 +98,7 @@ export const Bookpage = () => {
 						className="rounded mx-auto d-block m-3"
 						src={
 							process.env.REACT_APP_API_URL +
-							`uploads/${book.image}`
+							`/uploads/${book.image}`
 						}
 						style={{ width: '50%', height: 'auto' }}
 						alt="Book"
@@ -116,8 +116,8 @@ export const Bookpage = () => {
 						</p>
 						<p className="fw-bold">
 							{' '}
-							Condition:{' '}
-							<span className="fw-normal"> {book.condition}</span>
+							Language:{' '}
+							<span className="fw-normal"> {book.language}</span>
 						</p>
 						<p className="fw-bold">
 							Release Date:{' '}

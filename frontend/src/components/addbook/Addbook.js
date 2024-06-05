@@ -10,7 +10,7 @@ export const Addbook = () => {
 		author: '',
 		description: '',
 		genre: '',
-		condition: '',
+		language: '',
 		released: '',
 	});
 	const [file, setFile] = useState();
@@ -20,7 +20,7 @@ export const Addbook = () => {
 	const checkUser = async () => {
 		//User sends its access_token in headers to BE to be decoded.
 		await axios
-			.get(process.env.REACT_APP_API_URL + 'user/protected', {
+			.get(process.env.REACT_APP_API_URL + '/user/protected', {
 				withCredentials: true,
 				headers: {
 					Authorization: `Bearer ${user}`,
@@ -51,7 +51,7 @@ export const Addbook = () => {
 		form.append('file', file);
 		form.append('description', userInput.description);
 		form.append('genre', userInput.genre);
-		form.append('condition', userInput.condition);
+		form.append('language', userInput.language);
 		form.append('released', userInput.released);
 		form.append('owner', getUser);
 
@@ -61,7 +61,7 @@ export const Addbook = () => {
 	const createBook = async (form) => {
 		try {
 			const response = await axios
-				.post(process.env.REACT_APP_API_URL + 'book/newBook', form)
+				.post(process.env.REACT_APP_API_URL + '/book/newBook', form)
 				.then((res) => {
 					alert('Book created successfully!');
 					window.location.reload();
@@ -156,11 +156,11 @@ export const Addbook = () => {
 						<option value={'young'}>Young adult</option>
 					</select>
 
-					<label className="mt-3 mb-1">Condition</label>
+					<label className="mt-3 mb-1">Language</label>
 					<input
 						className="form-control w-50"
 						type="text"
-						name="condition"
+						name="language"
 						onChange={onChange}
 						required="required"
 					/>

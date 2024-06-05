@@ -117,18 +117,10 @@ export const Dashboard = () => {
 				<div className="text-center p-5">
 					<h1>Welcome {getUser.firstName}</h1>
 					<p className="dashboard-p m-5">
-						"A book is a gift you can open again and again"
+						"A book is a dream that you hold in your hands." — Neil Gaiman
 					</p>
-					<Link
-						to="/messenger"
-						className="btn btn-secondary m-2"
-						style={{
-							backgroundColor: '#81647C',
-							borderColor: '#81647C',
-						}}
-					>
-						Messages
-					</Link>
+					
+					
 					<Link
 						to="/edit"
 						className="btn btn-secondary m-2"
@@ -150,7 +142,7 @@ export const Dashboard = () => {
 										<th scope="col">Book Title</th>
 										<th scope="col">Owner</th>
 										<th scope="col">Return</th>
-										<th scope="col">Contact</th>
+										
 									</tr>
 								</thead>
 								<tbody>
@@ -182,24 +174,7 @@ export const Dashboard = () => {
 													Return
 												</button>
 											</td>
-											<td>
-												<button
-													className="btn btn-success btn-sm"
-													style={{
-														backgroundColor:
-															'#81647C',
-														borderColor: '#81647C',
-													}}
-													onClick={() => {
-														startChat(
-															borrow.borrower,
-															borrow.owner._id
-														);
-													}}
-												>
-													Chat
-												</button>
-											</td>
+											
 										</tr>
 									))}
 								</tbody>
@@ -231,7 +206,7 @@ export const Dashboard = () => {
 										<th scope="col">Book Title</th>
 										<th scope="col">Action</th>
 										<th scope="col">Status</th>
-										<th scope="col">Contact</th>
+										
 									</tr>
 								</thead>
 								<tbody>

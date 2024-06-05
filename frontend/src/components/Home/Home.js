@@ -14,9 +14,7 @@ export const Home = () => {
 						/>
 					</div>
 					<p className="text-center fs-4 m-2 p-2">
-						BookShare is a platform where you can loan books from
-						other people as well as loan out your books to other
-						people.
+					BookShare is a platform that allows you to borrow books from others and lend your own books to them.
 					</p>
 					<p className="text-center fs-4 m-2 p-3 text-decoration-none">
 						Get started by{' '}

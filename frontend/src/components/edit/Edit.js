@@ -19,7 +19,7 @@ export const Edit = () => {
 	const getUserAndSetFormData = async () => {
 		try {
 			const res = await axios.get(
-				`${process.env.REACT_APP_API_URL}user/protected`,
+				`${process.env.REACT_APP_API_URL}/user/protected`,
 				{
 					withCredentials: true,
 					headers: {
@@ -48,7 +48,7 @@ export const Edit = () => {
 		try {
 			const userData = formData;
 
-			const API_URL = `${process.env.REACT_APP_API_URL}user/`;
+			const API_URL = `${process.env.REACT_APP_API_URL}/user/`;
 			const userId = id;
 
 			const res = await axios.put(
@@ -71,7 +71,7 @@ export const Edit = () => {
 			await axios
 				.put(
 					process.env.REACT_APP_API_URL +
-						'user/' +
+						'/user/' +
 						userId +
 						'/resetpassword',
 					userData
@@ -86,7 +86,7 @@ export const Edit = () => {
 
 	const deleteUser = async () => {
 		await axios
-			.delete(process.env.REACT_APP_API_URL + 'user/' + id)
+			.delete(process.env.REACT_APP_API_URL + '/user/' + id)
 			.then(() => {
 				Cookies.remove('access_token');
 				window.location.reload();
