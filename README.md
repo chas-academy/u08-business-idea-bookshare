@@ -11,7 +11,9 @@ Final result: [BookShare]()
 
 ### Installation
 
-The tools used for this project include VSCode, Figma, Git, and GitHub. Follow these steps to set up the project:
+The tools used for this project include VSCode, Figma, Git, and GitHub. 
+
+Follow these steps to set up the project:
 
 1. **Clone the GitHub project**:
    ```sh
@@ -115,14 +117,72 @@ The frontend is built with React. Set up the frontend by navigating to the front
 - Add a queue function for users to wait for book availability.
 - Implement rating and commenting for books and users.
 
-### Figma lo-fi sketch for mobile
+### Answer to the Question: 
+
+**What problem does this codebase solve?**
+
+The BookShare project addresses the issue of accessibility and availability of books by providing a platform where users can borrow and lend books within their community. It creates a shared economy for books, making it easier for individuals to find books they want to read and lend out their own books to others. By facilitating this exchange, BookShare aims to reduce the cost and increase the variety of books available to users, fostering a community-driven approach to reading and book sharing.
+
+### Example of Usage (Litet exempel på användning)
+
+Here is a brief example of how to use the BookShare app:
+
+1. **Home Page**
+   - **Register** or **Login**: New users can register by filling out a simple form, and existing users can log in with their credentials.
+
+   
+   - **Browse Books**: Visitors can see a selection of available books and search for specific titles or authors.
+
+   ![Home Page Screenshot](home.png)
+
+2. **User Dashboard**
+   - **User Information**: Once logged in, users can view the books they have listed.
+
+  
+  ![Dashboard Screenshot](dash.png)
+
+  
+   - **Add New Book**: Users can add new books to the database by filling out a form with details like title, author, genre, and location.
+
+  ![Dash2 Screenshot](dash2.png)
+   
+
+3. **Search for Books**
+   - **Search Function**: Users can search for books by title or author and apply filters such as location and genre to narrow down results.
+
+![Search1 Page Screenshot](search.png)
+
+![Search Page Screenshot](search2.png)
+
+   - **View Book Details**: Click on a book to see more details, including availability and the owner's contact information.
+
+   
+
+4. **Book Details Page**
+   - **Book Information**: Displays detailed information about the book, including title, author, genre, and availability status.
+
+   ![Book Details Screenshot](bookPage.png)
+
+   - **Borrow Book**: Users can request to borrow the book from its owner.
+
+    ![Borrow Screenshot](borrow.png)
+
+   
+
+### Future Features (Framtida Funktioner)
+- **Connect to External API**: Fetch more books from external sources.
+- **Queue Function**: Implement a system for users to queue for book availability.
+- **Ratings and Comments**: Allow users to rate and comment on books and users.
 
 
 
-
-
+### Figma lo-fi sketch for mobile and desktop
 
 ![Screenshot of Figma lo-fi sketch for mobile](frontend/public/U08-Business-idea.png)
+
+![Screenshot of Figma lo-fi sketch for desktop](frontend/public/desktop.png)
+
+
 
 
 

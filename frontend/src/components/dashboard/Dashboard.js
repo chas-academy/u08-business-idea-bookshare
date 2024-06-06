@@ -54,7 +54,7 @@ export const Dashboard = () => {
 	const returnBook = async (id) => {
 		const newBorrower = JSON.stringify({ borrower: null });
 		await axios
-			.put(process.env.REACT_APP_API_URL + `book/${id}`, newBorrower, {
+			.put(process.env.REACT_APP_API_URL + `/book/${id}`, newBorrower, {
 				headers: { 'Content-Type': 'application/json' },
 			})
 			.then((res) => {
@@ -265,27 +265,7 @@ export const Dashboard = () => {
 													</span>
 												)}
 											</td>
-											<td>
-												{book.borrower ? (
-													<button
-														className="btn btn-success btn-sm"
-														style={{
-															backgroundColor:
-																'#81647C',
-															borderColor:
-																'#81647C',
-														}}
-														onClick={() => {
-															startChat(
-																book.owner._id,
-																book.borrower
-															);
-														}}
-													>
-														Chat
-													</button>
-												) : null}
-											</td>
+											
 										</tr>
 									))}
 								</tbody>
