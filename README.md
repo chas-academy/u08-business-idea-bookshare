@@ -178,7 +178,8 @@ Here is a brief example of how to use the BookShare app:
 
 ### Figma lo-fi sketch for mobile and desktop
 
-![Screenshot of Figma lo-fi sketch for mobile](U08-Business-idea.png)
+![Screenshot of Figma lo-fi sketch for mobile](U08-Business-Idea.png)
+
 
 ![Screenshot of Figma lo-fi sketch for desktop](frontend/public/desktop.png)
 
