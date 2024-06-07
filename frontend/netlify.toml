@@ -1,5 +1,5 @@
 [build]
-  command = "CI='False' npm run build"
+ 
   publish = "/build"
   base ="/"
   
