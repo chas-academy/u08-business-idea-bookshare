@@ -8,30 +8,30 @@ const cookieParser = require("cookie-parser");
 
 const PORT = process.env.PORT || 8081;
 const app = express();
-const allowedOrigins = ['https://u08.netlify.app', 'https://main--u08.netlify.app'];
+//const allowedOrigins = ['https://u08.netlify.app', 'https://main--u08.netlify.app'];
 
 app.use(cookieParser());
 app.use(express.json());
 
-// app.use(
-//   cors({
-//     origin: process.env.REQUEST_URL,
+ app.use(
+   cors({
+     origin: process.env.REQUEST_URL,
    
-//     credentials: true,
-//   })
-// );
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true // This is important for including cookies in requests
-};
+     credentials: true,
+   })
+ );
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   },
+//   credentials: true // This is important for including cookies in requests
+// };
 
-app.use(cors(corsOptions));
+//app.use(cors(corsOptions));
 
 
 
