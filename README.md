@@ -141,18 +141,30 @@ Here is a brief example of how to use the BookShare app:
    - **User Information**: Once logged in, users can view the books they have listed.
 
   
-  ![Dashboard Screenshot](assets/dash.png)
+  ![Dashboard Screenshot](assets/welcome.png)
 
   
    - **Add New Book**: Users can add new books to the database by filling out a form with details like title, author, genre, and location.
 
-  ![Dash2 Screenshot](assets/dash2.png)
+  ![addbook Screenshot](assets/addbook.png)
 
- 
+   ![create Screenshot](assets/create.png)
+
+   
+
 
 - **Edit profile**: Users can edit their profile, reset their password, and cancel their account.
 
 ![Edi profile Screenshot](assets/userSettin.png)
+
+![Edi profile2 Screenshot](assets/editprofile.png)
+
+**Book Editing**: Users have the ability to modify book details, delete entries, and check the availability status of the book.
+
+![status Screenshot](assets/bookstauts.png)
+
+
+
    
 
 3. **Search for Books**
