@@ -8,7 +8,7 @@ const cookieParser = require("cookie-parser");
 
 const PORT = process.env.PORT || 8081;
 const app = express();
-//const allowedOrigins = ['https://u08.netlify.app', 'https://main--u08.netlify.app'];
+const allowedOrigins = ['https://u08.netlify.app', 'https://main--u08.netlify.app'];
 
 app.use(cookieParser());
 app.use(express.json());
