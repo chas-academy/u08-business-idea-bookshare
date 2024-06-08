@@ -19,34 +19,8 @@ const storage = multer.diskStorage({
 const uploadImg = multer({ storage: storage });
 
 // Create book with one img
-// router.post('/newBook', uploadImg.single('file'), (req, res) => {
-// 	try {
-// 		const newBook = new Book({
-// 			title: req.body.title,
-// 			image: req.file.originalname,
-// 			author: req.body.author,
-// 			description: req.body.description,
-// 			genre: req.body.genre,
-// 			language: req.body.language,
-// 			released: req.body.released,
-// 			owner: req.body.owner,
-			
-// 		});
-// 		newBook.save().then(res.json('New book is created.'));
-// 	} catch (error) {
-// 		res.status(500).json({
-// 			status: 'Failed',
-// 			message: 'Could not create book. ',
-// 			error,
-// 		});
-// 	}
-// });
 router.post('/newBook', uploadImg.single('file'), (req, res) => {
 	try {
-		if (!req.file) {
-			return res.status(400).json({ message: 'No file uploaded' });
-		}
-
 		const newBook = new Book({
 			title: req.body.title,
 			image: req.file.originalname,
@@ -56,15 +30,13 @@ router.post('/newBook', uploadImg.single('file'), (req, res) => {
 			language: req.body.language,
 			released: req.body.released,
 			owner: req.body.owner,
+			
 		});
-
-		newBook.save().then(() => {
-			res.status(201).json({ message: 'New book created successfully' });
-		});
+		newBook.save().then(res.json('New book is created.'));
 	} catch (error) {
 		res.status(500).json({
 			status: 'Failed',
-			message: 'Could not create book',
+			message: 'Could not create book. ',
 			error,
 		});
 	}
