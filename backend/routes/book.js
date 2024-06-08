@@ -23,13 +23,14 @@ router.post('/newBook', uploadImg.single('file'), (req, res) => {
 	try {
 		const newBook = new Book({
 			title: req.body.title,
+			image: req.file.originalname,
 			author: req.body.author,
 			description: req.body.description,
 			genre: req.body.genre,
 			language: req.body.language,
 			released: req.body.released,
 			owner: req.body.owner,
-			image: req.file.originalname,
+			
 		});
 		newBook.save().then(res.json('New book is created.'));
 	} catch (error) {
