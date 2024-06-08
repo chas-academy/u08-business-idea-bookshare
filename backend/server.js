@@ -13,13 +13,17 @@ const allowedOrigins = ['https://u08.netlify.app', 'https://main--u08.netlify.ap
 app.use(cookieParser());
 app.use(express.json());
 
-app.use(
-  cors({
-    origin: process.env.REQUEST_URL,
+// app.use(
+//   cors({
+//     origin: process.env.REQUEST_URL,
    
-    credentials: true,
-  })
-);
+//     credentials: true,
+//   })
+// );
+app.use(cors({
+  origin: '*'
+}));
+
 
 app.use("/user", userRouter);
 app.use("/book", bookRouter);
