@@ -47,8 +47,9 @@ export const Addbook = () => {
 
 		const form = new FormData();
 		form.append('title', userInput.title);
-		form.append('author', userInput.author);
 		form.append('file', file);
+		form.append('author', userInput.author);
+		
 		form.append('description', userInput.description);
 		form.append('genre', userInput.genre);
 		form.append('language', userInput.language);
