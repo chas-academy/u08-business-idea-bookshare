@@ -114,10 +114,12 @@ The frontend is built with React. Set up the frontend by navigating to the front
 #### App.js
 - Contains all routes to the components and the navbar.
 
-### Future Features
-- Connect the app to an external API to fetch more books.
-- Add a queue function for users to wait for book availability.
-- Implement rating and commenting for books and users.
+
+### Future Features (Framtida Funktioner)
+- **Connect to External API**: Fetch more books from external sources.
+- **Queue Function**: Implement a system for users to queue for book availability.
+- **Ratings and Comments**: Allow users to rate and comment on books and users.
+
 
 ### Answer to the Question: 
 
@@ -153,7 +155,7 @@ Here is a brief example of how to use the BookShare app:
    
 
 
-- **Edit profile**: Users can edit their profile, reset their password, and cancel their account.
+**Edit Profile**: Users can update their profile, reset their password, or cancel their account by clicking the settings button.
 
 ![Edi profile Screenshot](assets/userSettin.png)
 
@@ -188,11 +190,6 @@ Here is a brief example of how to use the BookShare app:
     ![Borrow Screenshot](assets/borrow.png)
 
    
-
-### Future Features (Framtida Funktioner)
-- **Connect to External API**: Fetch more books from external sources.
-- **Queue Function**: Implement a system for users to queue for book availability.
-- **Ratings and Comments**: Allow users to rate and comment on books and users.
 
 
 
